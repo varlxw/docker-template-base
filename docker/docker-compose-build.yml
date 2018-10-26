@@ -1,0 +1,12 @@
+version: "3"
+services:
+  node:
+    build:
+      context: ../
+      dockerfile: ./docker/build/Dockerfile
+    image: "bimbox-pkpm-sg-build"
+    container_name: "bimbox-pkpm-sg-build"
+    volumes:
+      - "./_volumes/dist:/home/node/bimbox-pkpm-sg/dist"
+    environment:
+      - NODE_ENV=development
